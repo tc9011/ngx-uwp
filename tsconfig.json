@@ -19,7 +19,12 @@
       "dom"
     ],
     "paths": {
-
+      "ngx-icecream": [
+        "dist/ngx-icecream"
+      ],
+      "ngx-icecream/*": [
+        "dist/ngx-icecream/*"
+      ]
     }
   }
 }
