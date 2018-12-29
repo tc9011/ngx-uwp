@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "button": [
+        "dist/button"
+      ],
+      "button/*": [
+        "dist/button/*"
+      ],
+      "radio": [
+        "dist/radio"
+      ],
+      "radio/*": [
+        "dist/radio/*"
+      ]
+    }
   }
 }
