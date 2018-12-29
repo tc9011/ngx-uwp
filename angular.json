@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-icecream": {
+    "ngx-icecream-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-icecream",
+            "outputPath": "dist/ngx-icecream-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-icecream:build"
+            "browserTarget": "ngx-icecream-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-icecream:build:production"
+              "browserTarget": "ngx-icecream-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-icecream:build"
+            "browserTarget": "ngx-icecream-app:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "ngx-icecream-e2e": {
+    "ngx-icecream-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-icecream:serve"
+            "devServerTarget": "ngx-icecream-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-icecream:serve:production"
+              "devServerTarget": "ngx-icecream-app:serve:production"
             }
           }
         },
@@ -133,77 +133,7 @@
           }
         }
       }
-    },
-    "button": {
-      "root": "projects/button",
-      "sourceRoot": "projects/button/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/button/tsconfig.lib.json",
-            "project": "projects/button/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/button/src/test.ts",
-            "tsConfig": "projects/button/tsconfig.spec.json",
-            "karmaConfig": "projects/button/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/button/tsconfig.lib.json",
-              "projects/button/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "radio": {
-      "root": "projects/radio",
-      "sourceRoot": "projects/radio/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/radio/tsconfig.lib.json",
-            "project": "projects/radio/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/radio/src/test.ts",
-            "tsConfig": "projects/radio/tsconfig.spec.json",
-            "karmaConfig": "projects/radio/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/radio/tsconfig.lib.json",
-              "projects/radio/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
     }
   },
-  "defaultProject": "ngx-icecream"
+  "defaultProject": "ngx-icecream-app"
 }
