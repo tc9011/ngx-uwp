@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // @ts-ignore
-import { NgxIcecreamModule } from 'ngx-icecream'
+import { NgxIcecreamModule } from 'ngx-icecream';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { NgxIcecreamModule } from 'ngx-icecream'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxIcecreamModule
+    NgxIcecreamModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
