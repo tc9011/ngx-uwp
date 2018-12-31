@@ -20,10 +20,10 @@
     ],
     "paths": {
       "ngx-icecream": [
-        "dist/ngx-icecream"
+        "publish"
       ],
       "ngx-icecream/*": [
-        "dist/ngx-icecream/*"
+        "publish/*"
       ]
     }
   }

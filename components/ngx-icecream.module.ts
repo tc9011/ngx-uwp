@@ -1,10 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core'
 
-import { IceInputModule } from './input/ice-input.module'
-import { IceButtonModule } from './button/ice-button.module'
-
-export * from "./button"
-export * from "./input"
+import { IceInputModule } from './input'
+import { IceButtonModule } from './button'
 
 @NgModule({
   exports: [
