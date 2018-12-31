@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IceComponent } from './ice.component';
+import { IceInputComponent } from './ice-input.component';
 
-describe('IceComponent', () => {
-  let component: IceComponent;
-  let fixture: ComponentFixture<IceComponent>;
+describe('IceInputComponent', () => {
+  let component: IceInputComponent;
+  let fixture: ComponentFixture<IceInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IceComponent ]
+      declarations: [ IceInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IceComponent);
+    fixture = TestBed.createComponent(IceInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

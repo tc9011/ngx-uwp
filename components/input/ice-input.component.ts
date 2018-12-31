@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ice-input.component.html',
   styleUrls: ['./ice-input.component.scss']
 })
-export class IceComponent implements OnInit {
+export class IceInputComponent implements OnInit {
 
   constructor() { }
 

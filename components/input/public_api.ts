@@ -1,2 +1,2 @@
 export * from './ice-input.module';
-export * from './ice.component';
+export * from './ice-input.component';
