@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ice-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  templateUrl: './ice-input.component.html',
+  styleUrls: ['./ice-input.component.scss']
 })
-export class InputComponent implements OnInit {
+export class IceComponent implements OnInit {
 
   constructor() { }
 

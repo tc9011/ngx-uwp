@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputComponent } from './input.component';
+import { IceComponent } from './ice.component';
 
 @NgModule({
-  declarations: [InputComponent],
+  declarations: [IceComponent],
   imports: [
     CommonModule
   ]
 })
-export class InputModule { }
+export class IceInputModule { }
