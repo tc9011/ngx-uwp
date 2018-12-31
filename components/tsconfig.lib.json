@@ -1,7 +1,8 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/lib",
+    "baseUrl": "./",
+    "outDir": "../release",
     "target": "es2015",
     "module": "es2015",
     "moduleResolution": "node",
@@ -25,6 +26,9 @@
     "strictInjectionParameters": true,
     "enableResourceInlining": true
   },
+  "files": [
+    "./ngx-icecream.module.ts"
+  ],
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
