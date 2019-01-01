@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "npm run build_lib && ng serve --open",
     "build": "ng build",
     "build_lib": "ng build ngx-icecream",
     "test": "ng test",

@@ -1,0 +1,9 @@
+@import "../style/themes/default";
+
+$alert-prefix-cls: #{$ice-prefix}-alert;
+
+.#{$alert-prefix-cls} {
+  background: #D4483E;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}

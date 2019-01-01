@@ -1,3 +1,29 @@
-$ice-prefix: ice-;
+$ice-prefix: ice;
 
-$primary-color: #88B153
+$primary-color: #88B153;
+$success-color: #88B153;
+$error-color: #D4483E;
+$warning-color: #D1BC3E;
+$normal-color: #52B9D1;
+
+$gray1-color: #d3d3d3;
+$gray2-color: #eeeeee;
+$gray3-color: #f3f3f3;
+$gray4-color: #f9f9f9;
+
+// font-size
+$font-size-sm : 12px;
+$font-size-base : $font-size-sm + 2px;
+$font-size-lg : $font-size-base + 4px;
+
+// border
+$border-color: $gray2-color;
+$border: 1px solid $gray2-color;
+
+// radius
+$border-radius : 4px;
+$btn-border-radius: 4px;
+
+// box-shadow
+$box-shadow: 0 3px 10px rgba(0,0,0,.1);
+
