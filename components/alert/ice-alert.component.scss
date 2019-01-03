@@ -3,7 +3,8 @@
 $alert-prefix-cls: #{$ice-prefix}-alert;
 
 .#{$alert-prefix-cls} {
-  background: #D4483E;
+  background: $error-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  color: $white-color;
 }

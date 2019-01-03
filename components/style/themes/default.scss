@@ -1,15 +1,12 @@
+@import "../color/colorPalette";
+
 $ice-prefix: ice;
 
-$primary-color: #7cb342;
-$success-color: #7cb342;
-$error-color: #e53734;
+$primary-color: $green-normal;
+$success-color: $green-normal;
+$error-color: $red-normal;
 $warning-color: #D1BC3E;
-$normal-color: #00bcd4;
-
-$gray1-color: #d3d3d3;
-$gray2-color: #eeeeee;
-$gray3-color: #f3f3f3;
-$gray4-color: #f9f9f9;
+$normal-color: $blue-normal;
 
 // font-size
 $font-size-sm : 12px;
