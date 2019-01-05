@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-// @ts-ignore
-import { NgxUWPModule } from 'ngx-uwp';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment'
+
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
+import { LayoutModule } from './layout/layout.module';
+import { ViewsModule } from './views/views.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +15,11 @@ import { environment } from '../environments/environment'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NgxUWPModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    LayoutModule,
+    ViewsModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
