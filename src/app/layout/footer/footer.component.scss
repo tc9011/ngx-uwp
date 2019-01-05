@@ -1,1 +1,40 @@
+@import "../../../style/theme";
+
+footer{
+  display: flex;
+  justify-content: center;
+  background: $theme-color;
+  color: $font-color;
+  min-height: 260px;
+}
+
+a {
+  color: $font-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 960px;
+  padding: 10px 0;
+  font-weight: lighter;
+  dl {
+    margin: 20px;
+  }
+  dt, dd {
+    margin: 12px 0;
+  }
+  dt {
+    font-size: $font-size-5;
+  }
+  dd {
+    font-size: $font-size-1;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 100%;
+  }
+}
 

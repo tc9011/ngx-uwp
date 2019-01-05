@@ -1,0 +1,13 @@
+html,
+body {
+  height: 100%;
+  font-family: Segoe UI, Microsoft YaHei, Open Sans, sans-serif, Hiragino Sans GB, Arial, Lantinghei SC, STHeiti, WenQuanYi Micro Hei, SimSun;
+}
+
+a {
+  text-decoration: none;
+  &:focus {
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+}
