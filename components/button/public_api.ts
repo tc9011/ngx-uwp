@@ -1,2 +1,2 @@
-export * from './ice-button.module';
-export * from './ice-button.component';
+export * from './uwp-button.module';
+export * from './uwp-button.component';

@@ -1,6 +1,6 @@
 @import "../style/themes/default";
 
-$alert-prefix-cls: #{$ice-prefix}-alert;
+$alert-prefix-cls: #{$uwp-prefix}-alert;
 
 .#{$alert-prefix-cls} {
   background: $error-color;

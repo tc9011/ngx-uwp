@@ -1,20 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IceAlertComponent } from './ice-alert.component';
+import { UWPAlertComponent } from './uwp-alert.component';
 
-describe('IceAlertComponent', () => {
-  let component: IceAlertComponent;
-  let fixture: ComponentFixture<IceAlertComponent>;
+
+describe('UWPAlertComponent', () => {
+  let component: UWPAlertComponent;
+  let fixture: ComponentFixture<UWPAlertComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IceAlertComponent ]
+      declarations: [ UWPAlertComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IceAlertComponent);
+    fixture = TestBed.createComponent(UWPAlertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

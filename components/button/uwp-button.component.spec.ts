@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IceInputComponent } from './ice-input.component';
+import { UWPButtonComponent } from './uwp-button.component';
 
-describe('IceInputComponent', () => {
-  let component: IceInputComponent;
-  let fixture: ComponentFixture<IceInputComponent>;
+describe('UWPButtonComponent', () => {
+  let component: UWPButtonComponent;
+  let fixture: ComponentFixture<UWPButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IceInputComponent ]
+      declarations: [ UWPButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IceInputComponent);
+    fixture = TestBed.createComponent(UWPButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

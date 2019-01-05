@@ -1,2 +1,2 @@
-export * from './ice-alert.module';
-export * from './ice-alert.component';
+export * from './uwp-alert.module';
+export * from './uwp-alert.component';

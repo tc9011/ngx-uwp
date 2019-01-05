@@ -1,2 +1,2 @@
-export * from './ice-input.module';
-export * from './ice-input.component';
+export * from './uwp-input.module';
+export * from './uwp-input.component';

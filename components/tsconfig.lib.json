@@ -27,7 +27,7 @@
     "enableResourceInlining": true
   },
   "files": [
-    "./ngx-icecream.module.ts"
+    "./ngx-uwp.module.ts"
   ],
   "exclude": [
     "src/test.ts",

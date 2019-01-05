@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-icecream-app": {
+    "ngx-uwp-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-icecream-app",
+            "outputPath": "dist/ngx-uwp-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-icecream-app:build"
+            "browserTarget": "ngx-uwp-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-icecream-app:build:production"
+              "browserTarget": "ngx-uwp-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-icecream-app:build"
+            "browserTarget": "ngx-uwp-app:build"
           }
         },
         "test": {
@@ -109,7 +109,7 @@
         }
       }
     },
-    "ngx-icecream-app-e2e": {
+    "ngx-uwp-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -118,11 +118,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-icecream-app:serve"
+            "devServerTarget": "ngx-uwp-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-icecream-app:serve:production"
+              "devServerTarget": "ngx-uwp-app:serve:production"
             }
           }
         },
@@ -137,11 +137,11 @@
         }
       }
     },
-    "ngx-icecream": {
+    "ngx-uwp": {
       "root": "components",
-      "sourceRoot": "components/ngx-icecream/src",
+      "sourceRoot": "components/ngx-uwp/src",
       "projectType": "library",
-      "prefix": "ice",
+      "prefix": "uwp",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -178,5 +178,5 @@
       }
     }
   },
-  "defaultProject": "ngx-icecream-app"
+  "defaultProject": "ngx-uwp-app"
 }

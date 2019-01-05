@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "ice",
+      "uwp",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "ice",
+      "uwp",
       "kebab-case"
     ]
   }

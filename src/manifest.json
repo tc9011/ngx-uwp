@@ -1,6 +1,6 @@
 {
-  "name": "ngx-icecream-app",
-  "short_name": "ngx-icecream-app",
+  "name": "ngx-uwp-app",
+  "short_name": "ngx-uwp-app",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
