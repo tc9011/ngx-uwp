@@ -1,0 +1,48 @@
+@import "../themes/default";
+
+// font size
+$font-size-header: 46px;
+$font-size-subHeader: 34px;
+$font-size-title: 24px;
+$font-size-subTitle: 20px;
+$font-size-subTitleAlt: 18px;
+$font-size-base: 15px;
+$font-size-baseAlt: 15px;
+$font-size-body: 15px;
+$font-size-captionAlt: 13px;
+$font-size-caption: 12px;
+
+// font weight
+$font-weight-header: lighter;
+$font-weight-subHeader: lighter;
+$font-weight-title: lighter;
+$font-weight-subTitle: normal;
+$font-weight-subTitleAlt: normal;
+$font-weight-base: 300;
+$font-weight-baseAlt: bold;
+$font-weight-body: 200;
+$font-weight-captionAlt: lighter;
+$font-weight-caption: lighter;
+
+// line height
+$line-height-header: 56px;
+$line-height-subHeader: 40px;
+$line-height-title: 28px;
+$line-height-subTitle: 24px;
+$line-height-subTitleAlt: 20px;
+$line-height-base: 20px;
+$line-height-baseAlt: 20px;
+$line-height-body: 20px;
+$line-height-captionAlt: 16px;
+$line-height-caption: 14px;
+
+$list: header subHeader title subTitle subTitleAlt base baseAlt body captionAlt caption;
+
+@each $key in $list {
+  .#{$uwp-prefix}-#{$key} {
+    font-size: #{'$font-size-'+$key};
+    font-weight: #{'$font-size-'+$key};
+    line-height: #{'$font-size-'+$key};
+  }
+}
+
