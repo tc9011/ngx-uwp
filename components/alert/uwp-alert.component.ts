@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'uwp-alert',
-  templateUrl: './uwp-alert.component.html',
-  styleUrls: ['./uwp-alert.component.scss']
+  templateUrl: './uwp-alert.component.html'
 })
 export class UWPAlertComponent implements OnInit {
 
