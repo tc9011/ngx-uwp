@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-global',
-  templateUrl: './global.component.html',
-  styleUrls: ['./global.component.scss']
+  templateUrl: './global.component.html'
 })
 export class GlobalComponent implements OnInit {
 
