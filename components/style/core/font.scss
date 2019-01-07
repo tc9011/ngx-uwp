@@ -1,5 +1,3 @@
-@import "../themes/default";
-
 // font size
 $font-size-header: 46px;
 $font-size-subHeader: 34px;
@@ -36,13 +34,63 @@ $line-height-body: 20px;
 $line-height-captionAlt: 16px;
 $line-height-caption: 14px;
 
-$list: header subHeader title subTitle subTitleAlt base baseAlt body captionAlt caption;
 
-@each $key in $list {
-  .#{$uwp-prefix}-#{$key} {
-    font-size: #{'$font-size-'+$key};
-    font-weight: #{'$font-size-'+$key};
-    line-height: #{'$font-size-'+$key};
-  }
+.uwp-font-header {
+  font-size: $font-size-header;
+  font-weight: $font-weight-header;
+  line-height: $line-height-header;
 }
 
+.uwp-font-subHeader {
+  font-size: $font-size-subHeader;
+  font-weight: $font-weight-subHeader;
+  line-height: $line-height-subHeader;
+}
+
+.uwp-font-title {
+  font-size: $font-size-title;
+  font-weight: $font-weight-title;
+  line-height: $line-height-title;
+}
+
+.uwp-font-subTitle {
+  font-size: $font-size-subTitle;
+  font-weight: $font-weight-subTitle;
+  line-height: $line-height-subTitle;
+}
+
+.uwp-font-subTitleAlt {
+  font-size: $font-size-subTitleAlt;
+  font-weight: $font-weight-subTitleAlt;
+  line-height: $line-height-subTitleAlt;
+}
+
+.uwp-font-base {
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+}
+
+.uwp-font-baseAlt {
+  font-size: $font-size-baseAlt;
+  font-weight: $font-weight-baseAlt;
+  line-height: $line-height-baseAlt;
+}
+
+.uwp-font-body {
+  font-size: $font-size-body;
+  font-weight: $font-weight-body;
+  line-height: $line-height-body;
+}
+
+.uwp-font-captionAlt {
+  font-size: $font-size-captionAlt;
+  font-weight: $font-weight-captionAlt;
+  line-height: $line-height-captionAlt;
+}
+
+.uwp-font-caption {
+  font-size: $font-size-caption;
+  font-weight: $font-weight-caption;
+  line-height: $line-height-caption;
+}

@@ -1,14 +1,12 @@
-@import "dark-theme";
-
 #uwp-footer{
   display: flex;
   justify-content: center;
   background: $theme-color;
-  color: $font-color;
+  color: $baseHigh;
   min-height: 260px;
 
   a {
-    color: $font-color;
+    color: $baseHigh;
   }
 
   .container {
@@ -24,10 +22,10 @@
       margin: 12px 0;
     }
     dt {
-      font-size: $font-size-5;
+      font-size: $font-size-subTitle;
     }
     dd {
-      font-size: $font-size-1;
+      font-size: $font-size-caption;
     }
   }
 
