@@ -61,6 +61,11 @@
       padding: 0 26px;
       cursor: pointer;
       transition: all 0.25s ease 0s;
+
+      &:hover {
+        background: $common-grey;
+        text-decoration: underline;
+      }
     }
   }
 }
