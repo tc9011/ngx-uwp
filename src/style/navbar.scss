@@ -1,3 +1,66 @@
 #uwp-navbar {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  background: $theme-color;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  z-index: 301;
 
+  .content {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 960px;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .logo {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 12px;
+    color: $common-blue;
+    font-size: 15px;
+    height: 60px;
+    text-decoration: none;
+
+    img {
+      height: 60px;
+    }
+  }
+
+  .nav-list-wrapper {
+    width: 100%;
+    margin-left: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .nav-list {
+      color: inherit;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .nav-item {
+      display: inline-block;
+      line-height: 60px;
+      font-size: 15px;
+      background: none;
+      color: inherit;
+      text-decoration: none;
+      padding: 0 26px;
+      cursor: pointer;
+      transition: all 0.25s ease 0s;
+    }
+  }
 }

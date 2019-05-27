@@ -10,11 +10,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'homepage',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
       {
-        path: 'homepage',
+        path: 'home',
         loadChildren: './homepage/homepage.module#HomepageModule',
       },
       {
