@@ -21,11 +21,11 @@ $btn-prefix-cls: #{$uwp-prefix}-btn;
 
 
   &:hover {
-    border: 2px solid;
+    border: 2px solid $baseMediumLow;
   }
 
   &:active {
-
+    background: $baseMediumLow;
   }
 
   &:disabled {
