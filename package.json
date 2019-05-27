@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "npm run build_lib && ng serve --open",
     "build": "ng build",
-    "build_lib": "ng build ngx-uwp",
+    "build_lib": "ng build ngx-uwp --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
