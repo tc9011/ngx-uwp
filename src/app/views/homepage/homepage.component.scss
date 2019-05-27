@@ -1,3 +1,7 @@
 .main-content {
+  width: 100%;
+  position: relative;
+  min-height: calc(100vh - 320px);
   margin-top: 60px;
+  background: url("../../../assets/images/dark-80.3I_pA.png") left top / cover no-repeat fixed;;
 }
