@@ -11,6 +11,8 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 
+export type uwpButtonType = 'primary' | 'accent';
+
 @Component({
   selector: '[uwp-button]',
   exportAs: 'uwpButton',
@@ -23,8 +25,8 @@ export class UWPButtonComponent implements OnInit {
   prefixCls = 'uwp-btn';
 
   @Input() class = '';
-  @Input() uwpType = 'default';
-  @Input() uwpBorder = '2px';
+  @Input() uwpType: uwpButtonType = 'primary';
+  @Input() uwpBorderSize = '2px';
 
   @HostBinding('class')
   get hostClasses(): string {

@@ -16,16 +16,31 @@ $btn-prefix-cls: #{$uwp-prefix}-btn;
   padding: 4px 16px;
   transition: all .25s;
   border: 2px solid transparent;
-  color: $chromeWhite;
-  background: $listMedium;
 
+  &-primary {
+    color: $baseHigh;
+    background: $baseLow;
+
+    &:active {
+      background: $baseMediumLow;
+    }
+  }
+
+  &-accent {
+    color: $baseHigh;
+    background: $accent;
+
+    &:active {
+      background: $listAccentLow;
+    }
+  }
 
   &:hover {
     border: 2px solid $baseMediumLow;
   }
 
-  &:active {
-    background: $baseMediumLow;
+  &:focus {
+    border: solid 2px $baseHigh;
   }
 
   &:disabled {
