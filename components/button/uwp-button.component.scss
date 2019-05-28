@@ -30,5 +30,11 @@ $btn-prefix-cls: #{$uwp-prefix}-btn;
 
   &:disabled {
     cursor: not-allowed;
+    background: $baseMedium;
+    color: $baseMedium;
+
+    &:hover {
+      border: 2px solid transparent;
+    }
   }
 }
