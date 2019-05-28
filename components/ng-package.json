@@ -3,5 +3,8 @@
   "dest": "../publish",
   "lib": {
     "entryFile": "ngx-uwp.module.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "angular"
+  ]
 }
