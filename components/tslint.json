@@ -4,12 +4,14 @@
     "directive-selector": [
       true,
       "attribute",
-      "uwp"
+      "uwp",
+      ["kebab-case", "camelCase"]
     ],
     "component-selector": [
       true,
       ["element", "attribute"],
-      "uwp"
+      "uwp",
+      ["kebab-case", "camelCase"]
     ]
   }
 }
