@@ -15,7 +15,7 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        loadChildren: './homepage/homepage.module#HomepageModule',
+        loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule),
       },
       {
         path: 'about',
