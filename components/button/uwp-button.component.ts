@@ -36,7 +36,7 @@ export class UWPButtonComponent implements AfterContentInit {
     ].join(' ');
   }
 
-  @ViewChild('contentElement') contentElement: ElementRef;
+  @ViewChild('contentElement', {static: false}) contentElement: ElementRef;
 
   constructor(
     private cdr: ChangeDetectorRef,
