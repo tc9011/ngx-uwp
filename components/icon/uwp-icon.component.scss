@@ -1,0 +1,22 @@
+@import "../style/themes/default";
+
+$icon-prefix-cls: #{$uwp-prefix}-icon;
+
+.#{$icon-prefix-cls} {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Segoe MDL2 Assets"!important;
+  transition: all .25s;
+  border: none;
+  outline: none;
+  user-select: none;
+  font-style: normal;
+  color: $baseHigh;
+  font-size: 24px;
+
+  &:hover {
+    transform: scale(1.25);
+    color: $accent;
+  }
+}
