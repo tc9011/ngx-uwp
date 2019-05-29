@@ -5,8 +5,7 @@ import {
   ElementRef,
   HostBinding,
   Input,
-  OnInit,
-  Renderer2,
+  AfterContentInit,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
@@ -21,8 +20,8 @@ export type uwpButtonType = 'primary' | 'accent';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UWPButtonComponent implements OnInit {
-  prefixCls = 'uwp-btn';
+export class UWPButtonComponent implements AfterContentInit {
+  private prefixCls = 'uwp-btn';
 
   @Input() class = '';
   @Input() uwpType: uwpButtonType = 'primary';
@@ -40,13 +39,12 @@ export class UWPButtonComponent implements OnInit {
   @ViewChild('contentElement') contentElement: ElementRef;
 
   constructor(
-    private elementRef: ElementRef,
-    private renderer: Renderer2,
     private cdr: ChangeDetectorRef,
   ) {
   }
 
-  ngOnInit() {
+  ngAfterContentInit(): void {
+    this.checkContent();
   }
 
   checkContent(): void {
