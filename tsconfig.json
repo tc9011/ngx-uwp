@@ -21,6 +21,9 @@
     "paths": {
       "ngx-uwp": [
         "components/ngx-uwp.module.ts"
+      ],
+      "ngx-uwp/*": [
+        "components/*"
       ]
     }
   }
