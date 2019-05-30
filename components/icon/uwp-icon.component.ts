@@ -9,7 +9,7 @@ import {
 
 // @ts-ignore
 import { Icons } from './icons';
-import { isNullObject, isNil } from '../core/check';
+import { isNilObject, isNil } from '../core/check';
 
 
 @Component({
@@ -45,7 +45,7 @@ export class UwpIconComponent implements AfterViewInit {
 
   @HostListener('mouseenter', ['$event.target'])
   onMouseEnter(element: HTMLElement) {
-    if (!isNil(this.iconHover) && isNullObject(this.iconHover)) {
+    if (!isNil(this.iconHover) && !isNilObject(this.iconHover)) {
       for (const key of Object.keys(this.iconHover)) {
         this.renderer.setStyle(element, key, this.iconHover[key]);
       }
@@ -54,7 +54,7 @@ export class UwpIconComponent implements AfterViewInit {
 
   @HostListener('mouseleave', ['$event.target'])
   onMouseLeave(element: HTMLElement) {
-    if (!isNil(this.iconHover) && isNullObject(this.iconHover)) {
+    if (!isNil(this.iconHover) && !isNilObject(this.iconHover)) {
       for (const key of Object.keys(this.iconHover)) {
         this.renderer.removeStyle(element, key, this.iconHover[key]);
       }
