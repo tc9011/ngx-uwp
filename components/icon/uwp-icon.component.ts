@@ -1,7 +1,7 @@
 import {
   AfterViewInit,
   Component, ElementRef,
-  HostBinding,
+  HostBinding, HostListener,
   Input,
   Renderer2,
   ViewEncapsulation,
@@ -9,6 +9,7 @@ import {
 
 // @ts-ignore
 import { Icons } from './icons';
+import { isNullObject, isNil } from '../core/check';
 
 
 @Component({
@@ -32,12 +33,32 @@ export class UwpIconComponent implements AfterViewInit {
     return this._iconType;
   }
 
+  @Input() iconHover: object;
+
   @HostBinding('class')
   get hostClasses(): string {
     return [
       'uwp-icon',
       this.class,
     ].join(' ');
+  }
+
+  @HostListener('mouseenter', ['$event.target'])
+  onMouseEnter(element: HTMLElement) {
+    if (!isNil(this.iconHover) && isNullObject(this.iconHover)) {
+      for (const key of Object.keys(this.iconHover)) {
+        this.renderer.setStyle(element, key, this.iconHover[key]);
+      }
+    }
+  }
+
+  @HostListener('mouseleave', ['$event.target'])
+  onMouseLeave(element: HTMLElement) {
+    if (!isNil(this.iconHover) && isNullObject(this.iconHover)) {
+      for (const key of Object.keys(this.iconHover)) {
+        this.renderer.removeStyle(element, key, this.iconHover[key]);
+      }
+    }
   }
 
   constructor(
