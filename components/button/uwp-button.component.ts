@@ -7,7 +7,7 @@ import {
   Input,
   AfterContentInit,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 
 export type uwpButtonType = 'primary' | 'accent';
@@ -37,7 +37,7 @@ export class UWPButtonComponent implements AfterContentInit {
     ].join(' ');
   }
 
-  @ViewChild('contentElement', {static: false}) contentElement: ElementRef;
+  @ViewChild('contentElement', { static: false }) contentElement: ElementRef;
 
   constructor(
     private cdr: ChangeDetectorRef,
