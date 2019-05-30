@@ -25,8 +25,6 @@ export class UWPButtonComponent implements AfterContentInit {
 
   @Input() class = '';
   @Input() uwpType: uwpButtonType = 'primary';
-  @Input() uwpBorderSize = '2px';
-  @Input() uwpBackgroundColor;
 
   @HostBinding('class')
   get hostClasses(): string {
