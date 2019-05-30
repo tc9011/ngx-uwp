@@ -1,7 +1,9 @@
 import {
   AfterViewInit,
-  Component, ElementRef,
-  HostBinding, HostListener,
+  Component,
+  ElementRef,
+  HostBinding,
+  HostListener,
   Input,
   Renderer2,
   ViewEncapsulation,
@@ -9,7 +11,7 @@ import {
 
 // @ts-ignore
 import { Icons } from './icons';
-import { isNilObject, isNil } from '../core/check';
+import { isNilObject, isNil } from 'ngx-uwp/core';
 
 
 @Component({
