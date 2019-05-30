@@ -46,14 +46,14 @@ export class UwpIconComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    this.createElement();
+    this.createIconElement();
   }
 
   private setElement(element: HTMLElement) {
     this.renderer.appendChild(this.el.nativeElement, element);
   }
 
-  private createElement() {
+  private createIconElement() {
     const span = this.renderer.createElement('span');
     const text = this.renderer.createText(this.iconType);
     this.renderer.appendChild(span, text);
