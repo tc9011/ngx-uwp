@@ -24,7 +24,8 @@ export class UwpIconComponent implements AfterViewInit {
   @Input() class = '';
   @Input()
   set iconType(value: string) {
-    this._iconType = Icons[value.charAt(0).toUpperCase() + value.slice(1)];
+    const _value = value.toLowerCase();
+    this._iconType = Icons[_value.charAt(0).toUpperCase() + _value.slice(1)];
   }
 
   get iconType() {
