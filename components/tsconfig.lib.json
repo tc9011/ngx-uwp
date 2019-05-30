@@ -16,7 +16,11 @@
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+    "paths": {
+      "ngx-uwp": ["./ngx-uwp.module"],
+      "ngx-uwp/*": ["./*"]
+    }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
