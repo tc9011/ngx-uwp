@@ -8,7 +8,6 @@ import { LayoutModule } from './layout/layout.module';
 import { ViewsModule } from './views/views.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { NgxUWPModule } from 'ngx-uwp';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { NgxUWPModule } from 'ngx-uwp';
     ViewsModule,
     CoreModule,
     SharedModule,
-    NgxUWPModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
