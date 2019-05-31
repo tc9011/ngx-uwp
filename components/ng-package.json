@@ -5,6 +5,7 @@
     "entryFile": "ngx-uwp.module.ts"
   },
   "whitelistedNonPeerDependencies": [
-    "angular"
+    "angular",
+    "tinycolor2"
   ]
 }
