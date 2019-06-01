@@ -9,19 +9,33 @@ div {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  background-color: transparent; // remove the gray background on active links in IE 10.
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  -webkit-text-decoration-skip: objects; // remove gaps in links underline in iOS 8+ and Safari 8+.
+
+  &[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
 ul, ol {
   list-style: none;
 }
 
-@font-face {
-  font-family: "Segoe MDL2 Assets";
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local("Segoe MDL2 Assets"),
-    url("../font/segoe-mdl2-assets/segmdl2.eot"),
-    url("../font/segoe-mdl2-assets/segmdl2.woff2") format("woff2"),
-    url("../font/segoe-mdl2-assets/segmdl2.woff") format("woff"),
-    url("../font/segoe-mdl2-assets/segmdl2.svg#SegoeMDL2Assets") format("svg"),
-    url("../font/segoe-mdl2-assets/segmdl2.ttf") format("truetype");
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+a,
+area,
+button,
+[role='button'],
+input:not([type='range']),
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
 }

@@ -1,30 +1,35 @@
-@import "../color/colorPalette";
-@import "../core/font";
-
 $uwp-prefix: uwp;
 
-$baseLow: rgba(255, 255, 255, 0.2);           // 20% White
-$baseMediumLow: rgba(255, 255, 255, 0.4);     // 40% White
-$baseMedium: rgba(255, 255, 255, 0.6);        // 60% White
-$baseMediumHigh: rgba(255, 255, 255, 0.8);    // 80% White
-$baseHigh: #fff;                              // 100% White
+:root {
+  --base: 255;
+  --alt: 0;
+  --accentR: 0;
+  --accentG: 120;
+  --accentB: 215;
+}
 
-$altLow: rgba(0, 0, 0, 0.2);                  // 20% Black
-$altMediumLow: rgba(0, 0, 0, 0.4);            // 40% Black
-$altMedium: rgba(0, 0, 0, 0.6);               // 60% Black
-$altMediumHigh: rgba(0, 0, 0, 0.8);           // 80% Black
-$altHigh: #000;                               // 100% Black
+$baseHigh: rgba(var(--base), var(--base), var(--base), 1);                   // 100% White
+$baseMediumHigh: rgba(var(--base), var(--base), var(--base), 0.8);           // 80% White
+$baseMedium: rgba(var(--base), var(--base), var(--base), 0.6);               // 60% White
+$baseMediumLow: rgba(var(--base), var(--base), var(--base), 0.4);            // 40% White
+$baseLow: rgba(var(--base), var(--base), var(--base), 0.2);                  // 20% White
 
-$listLow: rgba(255, 255, 255, 0.1);           // 10% White
-$listMedium: rgba(255, 255, 255, 0.2);        // 20% White
-$listAccentLow: rgba(0, 120, 215, 0.6);       // 40% Accent
-$listAccentMedium: rgba(0, 120, 215, 0.8);    // 60% Accent
-$listAccentHigh: rgba(0, 120, 215, 0.9);      // 70% Accent
+$altHigh: rgba(var(--alt), var(--alt), var(--alt), 1);                       // 100% Black
+$altMediumHigh: rgba(var(--alt), var(--alt), var(--alt), 0.8);               // 80% Black
+$altMedium: rgba(var(--alt), var(--alt), var(--alt), 0.6);                   // 60% Black
+$altMediumLow: rgba(var(--alt), var(--alt), var(--alt), 0.4);                // 40% Black
+$altLow: rgba(var(--alt), var(--alt), var(--alt), 0.2);                      // 20% Black
+
+$listLow: rgba(var(--base), var(--base), var(--base), 0.1);                      // 10% White
+$listMedium: rgba(var(--base), var(--base), var(--base), 0.2);                   // 20% White
+$listAccentLow: rgba(var(--accentR), var(--accentG), var(--accentB), 0.6);       // 40% Accent
+$listAccentMedium: rgba(var(--accentR), var(--accentG), var(--accentB), 0.8);    // 60% Accent
+$listAccentHigh: rgba(var(--accentR), var(--accentG), var(--accentB), 0.9);      // 70% Accent
 
 $accentLighter3: rgb(204, 233, 255);          // 100% Accent 3 shades lighter
 $accentLighter2: rgb(103, 188, 255);          // 100% Accent 2 shades lighter
 $accentLighter1: rgb(1, 143, 255);            // 100% Accent 1 shade lighter
-$accent: #0078D7;                             // 100% User-selected accent color
+$accent: rgb(var(--accentR), var(--accentG), var(--accentB));                // 100% User-selected accent color
 $accentDarker1: rgb(0, 60, 107);              // 100% Accent 1 shade darker
 $accentDarker2: rgb(0, 36, 64);               // 100% Accent 2 shades darker
 $accentDarker3: rgb(0, 12, 21);               // 100% Accent 3 shades darker
@@ -35,7 +40,6 @@ $chromeMedium: #1f1f1f;                       // 100% #1f1f1f
 $chromeHigh: #767676;                         // 100% #767676
 
 $chromeAltLow: #f2f2f2;                       // 100% #f2f2f2
-
 $chromeDisabledLow: #858585;                  // 100% #858585
 $chromeDisabledHigh: #333;                    // 100% #333
 

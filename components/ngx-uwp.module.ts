@@ -3,7 +3,8 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { UWPInputModule } from 'ngx-uwp/input';
 import { UWPButtonModule } from 'ngx-uwp/button';
 import { UWPAlertModule } from 'ngx-uwp/alert';
-import { UwpIconModule } from 'ngx-uwp/icon';
+import { UWPIconModule } from 'ngx-uwp/icon';
+import { UWPThemeModule } from 'ngx-uwp/core';
 
 export * from 'ngx-uwp/input';
 export * from 'ngx-uwp/button';
@@ -16,7 +17,8 @@ export * from 'ngx-uwp/core';
     UWPInputModule,
     UWPButtonModule,
     UWPAlertModule,
-    UwpIconModule
+    UWPIconModule,
+    UWPThemeModule,
   ]
 })
 export class NgxUWPModule {

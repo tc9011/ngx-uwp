@@ -21,7 +21,7 @@ import { isNilObject, isNil } from 'ngx-uwp/core';
   styleUrls: ['./uwp-icon.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class UwpIconComponent implements AfterViewInit {
+export class UWPIconComponent implements AfterViewInit {
   private _iconType: string;
 
   @Input() class = '';
