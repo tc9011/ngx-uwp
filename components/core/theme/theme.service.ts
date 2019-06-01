@@ -11,7 +11,7 @@ interface IThemeConfig {
 @Injectable({
   providedIn: 'root'
 })
-export class UWPThemeService {
+export class UwpThemeService {
   themeName: 'dark' | 'light' = 'dark';
   accent = '#0078D7';
 

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UWPIconComponent } from './uwp-icon.component';
+import { UwpIconComponent } from './uwp-icon.component';
 
 @NgModule({
-  declarations: [UWPIconComponent],
+  declarations: [UwpIconComponent],
   exports: [
-    UWPIconComponent
+    UwpIconComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class UWPIconModule { }
+export class UwpIconModule { }

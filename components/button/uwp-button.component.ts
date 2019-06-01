@@ -20,7 +20,7 @@ export type uwpButtonType = 'primary' | 'accent';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UWPButtonComponent implements AfterContentInit {
+export class UwpButtonComponent implements AfterContentInit {
   private prefixCls = 'uwp-btn';
 
   @Input() class = '';

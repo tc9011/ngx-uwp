@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UWPThemeService } from 'ngx-uwp';
+import { UwpThemeService } from 'ngx-uwp';
 
 @Component({
   selector: 'app-homepage',
@@ -8,7 +8,7 @@ import { UWPThemeService } from 'ngx-uwp';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private themeService: UWPThemeService) {}
+  constructor(private themeService: UwpThemeService) {}
 
   ngOnInit() {}
 

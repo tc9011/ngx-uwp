@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UWPButtonComponent } from './uwp-button.component';
+import { UwpButtonComponent } from './uwp-button.component';
 
-describe('UWPButtonComponent', () => {
-  let component: UWPButtonComponent;
-  let fixture: ComponentFixture<UWPButtonComponent>;
+describe('UwpButtonComponent', () => {
+  let component: UwpButtonComponent;
+  let fixture: ComponentFixture<UwpButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UWPButtonComponent ]
+      declarations: [ UwpButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UWPButtonComponent);
+    fixture = TestBed.createComponent(UwpButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
