@@ -36,14 +36,15 @@ export class UWPThemeService {
 
   private setAccent(accent: string) {
     const accentColor = tinycolor(accent);
+    const accentHex = accentColor.toHexString();
     const body = document.body;
     body.style.setProperty('--accent', accent);
-    body.style.setProperty('--accentLighter1', this.lighten(accentColor.toHexString(), 0.5));
-    body.style.setProperty('--accentLighter2', this.lighten(accentColor.toHexString(), 0.7));
-    body.style.setProperty('--accentLighter3', this.lighten(accentColor.toHexString(), 0.9));
-    body.style.setProperty('--accentDarker1', this.darken(accentColor.toHexString(), 0.5));
-    body.style.setProperty('--accentDarker2', this.darken(accentColor.toHexString(), 0.7));
-    body.style.setProperty('--accentDarker3', this.darken(accentColor.toHexString(), 0.9));
+    body.style.setProperty('--accentLighter1', this.lighten(accentHex, 0.5));
+    body.style.setProperty('--accentLighter2', this.lighten(accentHex, 0.7));
+    body.style.setProperty('--accentLighter3', this.lighten(accentHex, 0.9));
+    body.style.setProperty('--accentDarker1', this.darken(accentHex, 0.5));
+    body.style.setProperty('--accentDarker2', this.darken(accentHex, 0.7));
+    body.style.setProperty('--accentDarker3', this.darken(accentHex, 0.9));
     body.style.setProperty('--listAccentLow', accentColor.setAlpha(0.6).toRgbString());
     body.style.setProperty('--listAccentMedium', accentColor.setAlpha(0.8).toRgbString());
     body.style.setProperty('--listAccentHigh', accentColor.setAlpha(0.9).toRgbString());
