@@ -15,7 +15,7 @@ export class UWPThemeService {
   themeName: 'dark' | 'light' = 'dark';
   accent = '#0078D7';
 
-  public setTheme(themeConfig: IThemeConfig) {
+  public setTheme(themeConfig: IThemeConfig): void {
     const isDark = themeConfig.themeName === 'dark';
     this.themeName = themeConfig ? themeConfig.themeName || 'dark' : 'dark';
     this.accent = themeConfig ? themeConfig.accent || '#0078D7' : '#0078D7';
@@ -34,7 +34,7 @@ export class UWPThemeService {
     this.setAccent(this.accent);
   }
 
-  private setAccent(accent: string) {
+  private setAccent(accent: string): void {
     const accentColor = tinycolor(accent);
     const accentHex = accentColor.toHexString();
     const body = document.body;
