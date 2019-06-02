@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 interface IThemeConfig {
   themeName?: 'dark' | 'light';
   accent?: string;
+  useFluentDesign?: boolean;
 }
 
 @Injectable({
@@ -14,11 +15,13 @@ interface IThemeConfig {
 export class UwpThemeService {
   themeName: 'dark' | 'light' = 'dark';
   accent = '#0078D7';
+  useFluentDesign = false;
 
   public setTheme(themeConfig: IThemeConfig): void {
     const isDark = themeConfig.themeName === 'dark';
     this.themeName = themeConfig ? themeConfig.themeName || 'dark' : 'dark';
     this.accent = themeConfig ? themeConfig.accent || '#0078D7' : '#0078D7';
+    this.useFluentDesign = themeConfig ? themeConfig.useFluentDesign || false : false;
 
     const body = document.body;
     body.style.setProperty('--alt', isDark ? '0' : '255');
@@ -66,6 +69,7 @@ export class UwpThemeService {
     return of({
       themeName: this.themeName,
       accent: this.accent,
+      useFluentDesign: this.useFluentDesign,
     });
   }
 }
