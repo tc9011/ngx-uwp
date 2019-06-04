@@ -9,7 +9,6 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
-// @ts-ignore
 import { Icons } from './icons';
 import { isNilObject, isNil } from 'ngx-uwp/core';
 
