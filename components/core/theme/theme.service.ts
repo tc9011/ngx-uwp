@@ -13,15 +13,15 @@ interface IThemeConfig {
   providedIn: 'root'
 })
 export class UwpThemeService {
-  themeName: 'dark' | 'light' = 'dark';
-  accent = '#0078D7';
-  useFluentDesign = false;
+  _themeName: 'dark' | 'light' = 'dark';
+  _accent = '#0078D7';
+  _useFluentDesign = false;
 
   public setTheme(themeConfig: IThemeConfig): void {
     const isDark = themeConfig.themeName === 'dark';
-    this.themeName = themeConfig ? themeConfig.themeName || 'dark' : 'dark';
-    this.accent = themeConfig ? themeConfig.accent || '#0078D7' : '#0078D7';
-    this.useFluentDesign = themeConfig ? themeConfig.useFluentDesign || false : false;
+    this._themeName = themeConfig ? themeConfig.themeName || 'dark' : 'dark';
+    this._accent = themeConfig ? themeConfig.accent || '#0078D7' : '#0078D7';
+    this._useFluentDesign = themeConfig ? themeConfig.useFluentDesign || false : false;
 
     const body = document.body;
     body.style.setProperty('--alt', isDark ? '0' : '255');
@@ -34,7 +34,7 @@ export class UwpThemeService {
     body.style.setProperty('--chromeDisabledLow', isDark ? '#858585' : '#7a7a7a');
     body.style.setProperty('--chromeDisabledHigh', isDark ? '#333' : '#ccc');
 
-    this.setAccent(this.accent);
+    this.setAccent(this._accent);
   }
 
   private setAccent(accent: string): void {
@@ -67,9 +67,9 @@ export class UwpThemeService {
 
   public getTheme(): Observable<IThemeConfig> {
     return of({
-      themeName: this.themeName,
-      accent: this.accent,
-      useFluentDesign: this.useFluentDesign,
+      themeName: this._themeName,
+      accent: this._accent,
+      useFluentDesign: this._useFluentDesign,
     });
   }
 }
