@@ -34,32 +34,32 @@ export class UwpThemeService {
     body.style.setProperty('--chromeDisabledLow', isDark ? '#858585' : '#7a7a7a');
     body.style.setProperty('--chromeDisabledHigh', isDark ? '#333' : '#ccc');
 
-    this.setAccent(this._accent);
+    this._setAccent(this._accent);
   }
 
-  private setAccent(accent: string): void {
+  private _setAccent(accent: string): void {
     const accentColor = tinycolor(accent);
     const accentHex = accentColor.toHexString();
     const body = document.body;
     body.style.setProperty('--accent', accent);
-    body.style.setProperty('--accentLighter1', this.lighten(accentHex, 0.5));
-    body.style.setProperty('--accentLighter2', this.lighten(accentHex, 0.7));
-    body.style.setProperty('--accentLighter3', this.lighten(accentHex, 0.9));
-    body.style.setProperty('--accentDarker1', this.darken(accentHex, 0.5));
-    body.style.setProperty('--accentDarker2', this.darken(accentHex, 0.7));
-    body.style.setProperty('--accentDarker3', this.darken(accentHex, 0.9));
+    body.style.setProperty('--accentLighter1', this._lighten(accentHex, 0.5));
+    body.style.setProperty('--accentLighter2', this._lighten(accentHex, 0.7));
+    body.style.setProperty('--accentLighter3', this._lighten(accentHex, 0.9));
+    body.style.setProperty('--accentDarker1', this._darken(accentHex, 0.5));
+    body.style.setProperty('--accentDarker2', this._darken(accentHex, 0.7));
+    body.style.setProperty('--accentDarker3', this._darken(accentHex, 0.9));
     body.style.setProperty('--listAccentLow', accentColor.setAlpha(0.6).toRgbString());
     body.style.setProperty('--listAccentMedium', accentColor.setAlpha(0.8).toRgbString());
     body.style.setProperty('--listAccentHigh', accentColor.setAlpha(0.9).toRgbString());
   }
 
-  private darken(color: string, coefficient: number) {
+  private _darken(color: string, coefficient: number) {
     const hsl = tinycolor(color).toHsl();
     hsl.l = hsl.l * (1 - coefficient);
     return tinycolor(hsl).toRgbString();
   }
 
-  private lighten(color: string, coefficient: number) {
+  private _lighten(color: string, coefficient: number) {
     const hsl = tinycolor(color).toHsl();
     hsl.l = hsl.l + (100 - hsl.l) * coefficient;
     return tinycolor(hsl).toRgbString();
