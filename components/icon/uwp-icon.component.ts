@@ -48,7 +48,7 @@ export class UwpIconComponent implements AfterViewInit {
   onMouseEnter(element: HTMLElement) {
     if (!isNil(this.iconHover) && !isNilObject(this.iconHover)) {
       for (const key of Object.keys(this.iconHover)) {
-        this.renderer.setStyle(element, key, this.iconHover[key]);
+        this._renderer.setStyle(element, key, this.iconHover[key]);
       }
     }
   }
@@ -57,28 +57,28 @@ export class UwpIconComponent implements AfterViewInit {
   onMouseLeave(element: HTMLElement) {
     if (!isNil(this.iconHover) && !isNilObject(this.iconHover)) {
       for (const key of Object.keys(this.iconHover)) {
-        this.renderer.removeStyle(element, key, this.iconHover[key]);
+        this._renderer.removeStyle(element, key, this.iconHover[key]);
       }
     }
   }
 
   constructor(
-    private el: ElementRef,
-    private renderer: Renderer2
+    private _el: ElementRef,
+    private _renderer: Renderer2
   ) { }
 
   ngAfterViewInit() {
-    this.createIconElement();
+    this._createIconElement();
   }
 
-  private setElement(element: HTMLElement) {
-    this.renderer.appendChild(this.el.nativeElement, element);
+  private _setElement(element: HTMLElement) {
+    this._renderer.appendChild(this._el.nativeElement, element);
   }
 
-  private createIconElement() {
-    const span = this.renderer.createElement('span');
-    const text = this.renderer.createText(this.iconType);
-    this.renderer.appendChild(span, text);
-    this.setElement(span);
+  private _createIconElement() {
+    const span = this._renderer.createElement('span');
+    const text = this._renderer.createText(this.iconType);
+    this._renderer.appendChild(span, text);
+    this._setElement(span);
   }
 }
