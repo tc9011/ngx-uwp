@@ -38,7 +38,7 @@ export class UwpButtonComponent implements AfterContentInit {
   @ViewChild('contentElement', { static: false }) contentElement: ElementRef;
 
   constructor(
-    private cdr: ChangeDetectorRef,
+    private _cdr: ChangeDetectorRef,
   ) {
   }
 
@@ -47,6 +47,6 @@ export class UwpButtonComponent implements AfterContentInit {
   }
 
   checkContent(): void {
-    this.cdr.detectChanges();
+    this._cdr.detectChanges();
   }
 }
