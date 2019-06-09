@@ -21,7 +21,7 @@ export type uwpButtonType = 'primary' | 'accent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UwpButtonComponent implements AfterContentInit {
-  private prefixCls = 'uwp-btn';
+  private _prefixCls = 'uwp-btn';
 
   @Input() class = '';
   @Input() uwpType: uwpButtonType = 'primary';
@@ -31,7 +31,7 @@ export class UwpButtonComponent implements AfterContentInit {
     return [
       'uwp-btn',
       this.class,
-      `${this.prefixCls}-${this.uwpType}`,
+      `${this._prefixCls}-${this.uwpType}`,
     ].join(' ');
   }
 
