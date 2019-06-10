@@ -12,6 +12,7 @@
       ["element", "attribute"],
       "uwp",
       ["kebab-case", "camelCase"]
-    ]
+    ],
+    "no-host-metadata-property": false
   }
 }
