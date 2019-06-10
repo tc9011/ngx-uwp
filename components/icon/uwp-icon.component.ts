@@ -19,11 +19,13 @@ import { isNilObject, isNil } from 'ngx-uwp/core';
   templateUrl: './uwp-icon.component.html',
   styleUrls: ['./uwp-icon.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  host: {
+    'class': 'uwp-icon'
+  }
 })
 export class UwpIconComponent implements AfterViewInit {
   private _iconType: string;
 
-  @Input() class = '';
   @Input()
   set iconType(value: string) {
     const _value = value.toLowerCase();
@@ -35,14 +37,6 @@ export class UwpIconComponent implements AfterViewInit {
   }
 
   @Input() iconHover: object;
-
-  @HostBinding('class')
-  get hostClasses(): string {
-    return [
-      'uwp-icon',
-      this.class,
-    ].join(' ');
-  }
 
   @HostListener('mouseenter', ['$event.target'])
   onMouseEnter(element: HTMLElement) {
