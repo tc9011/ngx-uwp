@@ -13,7 +13,7 @@ import {
 export type uwpButtonType = 'primary' | 'accent';
 
 @Component({
-  selector: '[uwpButton]',
+  selector: '[uwp-button]',
   exportAs: 'uwpButton',
   templateUrl: './uwp-button.component.html',
   styleUrls: ['./uwp-button.component.scss'],

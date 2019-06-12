@@ -14,7 +14,7 @@ import { isNilObject, isNil } from 'ngx-uwp/core';
 
 
 @Component({
-  selector: '[uwpIcon]',
+  selector: '[uwp-icon]',
   exportAs: 'uwpIcon',
   templateUrl: './uwp-icon.component.html',
   styleUrls: ['./uwp-icon.component.scss'],
