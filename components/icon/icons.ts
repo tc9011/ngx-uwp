@@ -1266,4 +1266,4 @@ export const Icons = {
   'ClearAllInkMirrored': '\uEF19',
   'BackgroundToggle': '\uEF1F',
   'Marquee': '\uEF20'
-};
+}

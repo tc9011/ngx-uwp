@@ -6,10 +6,10 @@ import {
   Input,
   Renderer2,
   ViewEncapsulation,
-} from '@angular/core';
-import { isNil, isNilObject } from 'ngx-uwp/core';
+} from '@angular/core'
+import { isNil, isNilObject } from 'ngx-uwp/core'
 
-import { Icons } from './icons';
+import { Icons } from './icons'
 
 
 @Component({
@@ -23,25 +23,25 @@ import { Icons } from './icons';
   }
 })
 export class UwpIconComponent implements AfterViewInit {
-  private _iconType: string;
+  private _iconType: string
 
   @Input()
   set iconType(value: string) {
-    const _value = value.toLowerCase();
-    this._iconType = Icons[_value.charAt(0).toUpperCase() + _value.slice(1)];
+    const _value = value.toLowerCase()
+    this._iconType = Icons[_value.charAt(0).toUpperCase() + _value.slice(1)]
   }
 
   get iconType() {
-    return this._iconType;
+    return this._iconType
   }
 
-  @Input() iconHover: object;
+  @Input() iconHover: object
 
   @HostListener('mouseenter', ['$event.target'])
   onMouseEnter(element: HTMLElement) {
     if (!isNil(this.iconHover) && !isNilObject(this.iconHover)) {
       for (const key of Object.keys(this.iconHover)) {
-        this._renderer.setStyle(element, key, this.iconHover[key]);
+        this._renderer.setStyle(element, key, this.iconHover[key])
       }
     }
   }
@@ -50,7 +50,7 @@ export class UwpIconComponent implements AfterViewInit {
   onMouseLeave(element: HTMLElement) {
     if (!isNil(this.iconHover) && !isNilObject(this.iconHover)) {
       for (const key of Object.keys(this.iconHover)) {
-        this._renderer.removeStyle(element, key, this.iconHover[key]);
+        this._renderer.removeStyle(element, key, this.iconHover[key])
       }
     }
   }
@@ -61,17 +61,17 @@ export class UwpIconComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    this._createIconElement();
+    this._createIconElement()
   }
 
   private _setElement(element: HTMLElement) {
-    this._renderer.appendChild(this._el.nativeElement, element);
+    this._renderer.appendChild(this._el.nativeElement, element)
   }
 
   private _createIconElement() {
-    const span = this._renderer.createElement('span');
-    const text = this._renderer.createText(this.iconType);
-    this._renderer.appendChild(span, text);
-    this._setElement(span);
+    const span = this._renderer.createElement('span')
+    const text = this._renderer.createText(this.iconType)
+    this._renderer.appendChild(span, text)
+    this._setElement(span)
   }
 }

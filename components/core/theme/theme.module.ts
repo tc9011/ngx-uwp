@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 
-import { UwpThemeService } from 'ngx-uwp/core/theme/theme.service';
+import { UwpThemeService } from 'ngx-uwp/core/theme/theme.service'
 
 @NgModule({
   providers: [UwpThemeService]

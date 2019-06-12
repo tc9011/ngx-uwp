@@ -1,2 +1,2 @@
-export * from './uwp-icon.module';
-export * from './uwp-icon.component';
+export * from './uwp-icon.module'
+export * from './uwp-icon.component'

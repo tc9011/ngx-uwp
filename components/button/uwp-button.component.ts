@@ -8,9 +8,9 @@ import {
   Input,
   ViewChild,
   ViewEncapsulation,
-} from '@angular/core';
+} from '@angular/core'
 
-export type uwpButtonType = 'primary' | 'accent';
+export type uwpButtonType = 'primary' | 'accent'
 
 @Component({
   selector: '[uwp-button]',
@@ -21,10 +21,10 @@ export type uwpButtonType = 'primary' | 'accent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UwpButtonComponent implements AfterContentInit {
-  private _prefixCls = 'uwp-btn';
+  private _prefixCls = 'uwp-btn'
 
-  @Input() class = '';
-  @Input() uwpType: uwpButtonType = 'primary';
+  @Input() class = ''
+  @Input() uwpType: uwpButtonType = 'primary'
 
   @HostBinding('class')
   get hostClasses(): string {
@@ -32,10 +32,10 @@ export class UwpButtonComponent implements AfterContentInit {
       'uwp-btn',
       this.class,
       `${this._prefixCls}-${this.uwpType}`,
-    ].join(' ');
+    ].join(' ')
   }
 
-  @ViewChild('contentElement', { static: false }) contentElement: ElementRef;
+  @ViewChild('contentElement', { static: false }) contentElement: ElementRef
 
   constructor(
     private _cdr: ChangeDetectorRef,
@@ -43,10 +43,10 @@ export class UwpButtonComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    this.checkContent();
+    this.checkContent()
   }
 
   checkContent(): void {
-    this._cdr.detectChanges();
+    this._cdr.detectChanges()
   }
 }
