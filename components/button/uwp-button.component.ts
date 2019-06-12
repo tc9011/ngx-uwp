@@ -1,11 +1,11 @@
 import {
+  AfterContentInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
   Input,
-  AfterContentInit,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';

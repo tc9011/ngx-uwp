@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
+import { of, Observable } from 'rxjs';
+
 import tinycolor from 'tinycolor2';
-import { Observable, of } from 'rxjs';
 
 interface IThemeConfig {
   themeName?: 'dark' | 'light';

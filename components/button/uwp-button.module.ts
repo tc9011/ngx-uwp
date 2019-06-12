@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ObserversModule } from '@angular/cdk/observers';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { UwpIconModule } from 'ngx-uwp/icon';
 

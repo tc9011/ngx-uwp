@@ -2,15 +2,14 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  HostBinding,
   HostListener,
   Input,
   Renderer2,
   ViewEncapsulation,
 } from '@angular/core';
+import { isNil, isNilObject } from 'ngx-uwp/core';
 
 import { Icons } from './icons';
-import { isNilObject, isNil } from 'ngx-uwp/core';
 
 
 @Component({
