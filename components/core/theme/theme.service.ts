@@ -54,13 +54,13 @@ export class UwpThemeService {
     body.style.setProperty('--listAccentHigh', accentColor.setAlpha(0.9).toRgbString())
   }
 
-  private _darken(color: string, coefficient: number) {
+  private _darken(color: string, coefficient: number): string {
     const hsl = tinycolor(color).toHsl()
     hsl.l = hsl.l * (1 - coefficient)
     return tinycolor(hsl).toRgbString()
   }
 
-  private _lighten(color: string, coefficient: number) {
+  private _lighten(color: string, coefficient: number): string {
     const hsl = tinycolor(color).toHsl()
     hsl.l = hsl.l + (100 - hsl.l) * coefficient
     return tinycolor(hsl).toRgbString()
