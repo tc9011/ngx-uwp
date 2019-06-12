@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { RouterModule } from '@angular/router'
 
-import { HomepageComponent } from './homepage.component';
-import { homepageRoutes } from './homepage.routes';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module'
+
+import { HomepageComponent } from './homepage.component'
+import { homepageRoutes } from './homepage.routes'
 
 
 @NgModule({

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UwpThemeService } from 'ngx-uwp';
+import { Component, OnInit } from '@angular/core'
+import { UwpThemeService } from 'ngx-uwp'
 
 @Component({
   selector: 'app-homepage',
@@ -15,19 +15,19 @@ export class HomepageComponent implements OnInit {
   change() {
     this.themeService.getTheme().subscribe(
       data => {
-        console.log(data);
+        console.log(data)
         if (data.themeName === 'light') {
           this.themeService.setTheme({
             themeName: 'dark',
             accent: 'red'
-          });
+          })
         } else {
           this.themeService.setTheme({
             themeName: 'light',
             accent: 'blue'
-          });
+          })
         }
       }
-    );
+    )
   }
 }

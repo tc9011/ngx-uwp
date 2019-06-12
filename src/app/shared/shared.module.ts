@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
+import { NgModule } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router'
 
-import { NgxUWPModule } from 'ngx-uwp';
+import { NgxUWPModule } from 'ngx-uwp'
 
 const sharedModule = [
   HttpClientModule,
@@ -13,7 +13,7 @@ const sharedModule = [
   RouterModule,
   ReactiveFormsModule,
   NgxUWPModule
-];
+]
 
 
 @NgModule({

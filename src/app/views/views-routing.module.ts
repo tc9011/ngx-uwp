@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { GlobalComponent } from '../layout/global/global.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+
+import { GlobalComponent } from '../layout/global/global.component'
+
+import { AboutComponent } from './about/about.component'
 
 const routes: Routes = [
   {
@@ -23,7 +25,7 @@ const routes: Routes = [
       },
     ]
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

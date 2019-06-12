@@ -1,7 +1,7 @@
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewEncapsulation } from '@angular/core'
+import { Router } from '@angular/router'
 
-import { MenuData } from './sidebar.typings';
+import { MenuData } from './sidebar.typings'
 
 @Component({
   selector: 'app-sidebar',
@@ -48,11 +48,11 @@ export class SidebarComponent implements OnInit {
   *
   * */
 
-  _items: MenuData[];
+  _items: MenuData[]
 
   @Input()
   public set data(items: MenuData[]) {
-    this._items = items;
+    this._items = items
   }
 
   constructor(public el: ElementRef,
@@ -64,18 +64,18 @@ export class SidebarComponent implements OnInit {
   }
 
   public isActiveRoute(route: MenuData[]): boolean {
-    let isRouteActive: boolean;
-    const routeName = this.router.url.split('/');
+    let isRouteActive: boolean
+    const routeName = this.router.url.split('/')
 
     route.some(item => {
       if (routeName[routeName.length - 1] === item.routeLink) {
-        isRouteActive = true;
-        return true;
+        isRouteActive = true
+        return true
       } else {
-        isRouteActive = false;
+        isRouteActive = false
       }
-    });
-    return isRouteActive;
+    })
+    return isRouteActive
   }
 
 }

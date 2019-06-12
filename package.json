@@ -7,7 +7,7 @@
     "build": "ng build",
     "build_lib": "ng build ngx-uwp",
     "test": "ng test",
-    "lint": "tslint -c tslint.json 'components/**/!(demo|testing)/!(polyfills).ts' --fix",
+    "lint": "tslint -c tslint.json 'components/**/!(demo|testing)/!(polyfills).ts' 'src/app/**/!(demo|testing)/!(polyfills).ts' --fix",
     "e2e": "ng e2e"
   },
   "private": true,
