@@ -141,6 +141,7 @@
     "prefer-object-spread": true,
     "no-duplicate-imports": true,
     "no-import-side-effect": true,
-    "no-invalid-this": true
+    "no-invalid-this": true,
+    "array-type":[true, "array"]
   }
 }
