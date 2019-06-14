@@ -15,7 +15,6 @@ const sharedModule = [
   NgxUWPModule
 ]
 
-
 @NgModule({
   imports: sharedModule,
   declarations: [],
