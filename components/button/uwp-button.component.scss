@@ -14,7 +14,7 @@ $btn-prefix-cls: #{$uwp-prefix}-btn;
   touch-action: manipulation;
   outline: none;
   padding: 4px 16px;
-  transition: all .25s;
+  transition: all 0.25s;
   border: 2px solid transparent;
 
   &-primary {

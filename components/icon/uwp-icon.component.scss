@@ -6,8 +6,9 @@ $icon-prefix-cls: #{$uwp-prefix}-icon;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  font-family: "Segoe MDL2 Assets"!important;
-  transition: all .25s;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: "Segoe MDL2 Assets" !important;
+  transition: all 0.25s;
   border: none;
   outline: none;
   user-select: none;
