@@ -14,9 +14,9 @@ interface IThemeConfig {
   providedIn: 'root'
 })
 export class UwpThemeService {
-  _themeName: 'dark' | 'light' = 'dark'
-  _accent = '#0078D7'
-  _useFluentDesign = false
+  private _themeName: 'dark' | 'light' = 'dark'
+  private _accent = '#0078D7'
+  private _useFluentDesign = false
 
   public setTheme(themeConfig: IThemeConfig): void {
     const isDark = themeConfig.themeName === 'dark'
