@@ -1,3 +1,5 @@
+sudo: required
+dist: trusty
 language: node_js
 
 node_js:
@@ -19,5 +21,3 @@ install:
 script:
   - npm run build
   - npm run build:lib
-
-sudo: false
