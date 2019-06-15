@@ -9,7 +9,7 @@ ngx-uwp
 
 </div>
 
-an component library for angular
+Angular Components that Implement Microsoft's UWP Design & Fluent Design
 
 
 ## TODO
