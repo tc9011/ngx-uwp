@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build_lib && ng serve --open",
-    "build": "ng build",
-    "build_lib": "npm run lint && ng build ngx-uwp",
+    "start": "npm run build:lib && ng serve --open",
+    "build": "npm run build:lib && ng build",
+    "build:site": "ng build  --prod --aot",
+    "build:lib": "npm run lint && ng build ngx-uwp",
     "test": "ng test",
     "lint": "npm run lint:ts && npm run lint:style",
     "lint:ts": "tslint -c tslint.json 'components/**/!(demo|testing)/!(polyfills).ts' 'src/app/**/!(demo|testing)/!(polyfills).ts' --fix",
