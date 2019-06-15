@@ -1,0 +1,10 @@
+<div class="uwp-tooltip">
+  <ng-container *ngTemplateOutlet="isTemplate() ? uwpContent : defaultTooltip">
+  </ng-container>
+  <ng-template #defaultTooltip>
+    <div>
+      {{ uwpContent }}
+    </div>
+  </ng-template>
+</div>
+

@@ -1,0 +1,17 @@
+@import "../style/index";
+
+$tooltip-prefix-cls: #{$uwp-prefix}-tooltip;
+
+.#{$tooltip-prefix-cls} {
+  min-height: 28px;
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 4px 8px;
+  transition: all 0.25s 0s ease-in-out;
+  border: 1px solid $listLow;   // TODO theme.useFluentDesign ? theme.listLow : theme.baseLow
+  color: $baseHigh;
+  background: $chromeMedium;
+  z-index: 201;
+}
