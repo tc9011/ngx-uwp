@@ -51,7 +51,7 @@ export class SidebarComponent implements OnInit {
   _items: MenuData[]
 
   @Input()
-  public set data(items: MenuData[]) {
+  set data(items: MenuData[]) {
     this._items = items
   }
 
@@ -63,7 +63,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
   }
 
-  public isActiveRoute(route: MenuData[]): boolean {
+  isActiveRoute(route: MenuData[]): boolean {
     let isRouteActive: boolean
     const routeName = this.router.url.split('/')
 

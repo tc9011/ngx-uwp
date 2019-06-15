@@ -10,6 +10,11 @@
     <button style="margin: 20px" uwp-button uwpType="accent" (click)="change()">click me</button>
     <i uwp-icon iconType="save" [iconHover]="{transform: 'scale(1.25)', color: '#0078D7'}"></i>
     <i style="margin-left: 20px; font-size: 12px" uwp-icon iconType="save" uwp-tooltip uwpContent="save我的"></i>
+    <i style="margin-left: 20px" uwp-icon iconType="save" uwp-tooltip [uwpContent]="template"></i>
+    <ng-template #template>
+      <span style="color: red">from template</span>
+    </ng-template>
+    <i style="margin-left: 20px" uwp-icon iconType="save" uwp-tooltip uwpAutoClose uwpContent="save"></i>
   </div>
 </div>
 

@@ -18,7 +18,7 @@ export class UwpThemeService {
   private _accent = '#0078D7'
   private _useFluentDesign = false
 
-  public setTheme(themeConfig: IThemeConfig): void {
+  setTheme(themeConfig: IThemeConfig): void {
     const isDark = themeConfig.themeName === 'dark'
     this._themeName = themeConfig ? themeConfig.themeName || 'dark' : 'dark'
     this._accent = themeConfig ? themeConfig.accent || '#0078D7' : '#0078D7'
@@ -66,7 +66,7 @@ export class UwpThemeService {
     return tinycolor(hsl).toRgbString()
   }
 
-  public getTheme(): Observable<IThemeConfig> {
+  getTheme(): Observable<IThemeConfig> {
     return of({
       themeName: this._themeName,
       accent: this._accent,
