@@ -31,7 +31,7 @@
       true,
       140
     ],
-    "member-access": [true, "no-public"],
+    "member-access": [true, "no-public", "check-constructor"],
     "member-ordering": [
       true,
       {
