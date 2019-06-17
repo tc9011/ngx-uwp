@@ -3,6 +3,7 @@ import { ComponentPortal } from '@angular/cdk/portal'
 import {
   ChangeDetectorRef,
   ComponentFactoryResolver,
+  ComponentRef,
   Directive,
   ElementRef,
   Input,
@@ -12,7 +13,7 @@ import {
   Renderer2,
   SimpleChanges,
   TemplateRef,
-  ViewContainerRef
+  ViewContainerRef,
 } from '@angular/core'
 
 import { isNil, InputBoolean } from 'ngx-uwp/core'
@@ -33,6 +34,7 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
   private _delayTimer = null
   private _portal: ComponentPortal<UwpTooltipComponent>
   private _manualListeners = new Map<string, EventListenerOrEventListenerObject>()
+  private _componentRef: ComponentRef<UwpTooltipComponent>
 
   protected needUpdateProperties = [
     'uwpContent'
@@ -113,6 +115,8 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
 
     if (this._overlayRef && this._overlayRef.hasAttached()) {
       this._delayTimer = setTimeout(() => {
+        this._componentRef.destroy()
+        this._overlayRef.detach()
         this._overlayRef.dispose()
       }, delay * 1000)
     }
@@ -144,8 +148,8 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
     config.scrollStrategy = this._overlay.scrollStrategies.reposition()
     this._overlayRef = this._overlay.create(config)
     this._portal = this._portal || new ComponentPortal(UwpTooltipComponent, this._viewContainerRef)
-    const overlayRef = this._overlayRef.attach(this._portal)
-    this._tooltipInstance = overlayRef.instance
+    this._componentRef = this._overlayRef.attach(this._portal)
+    this._tooltipInstance = this._componentRef.instance
     this._tooltipInstance.cdr.markForCheck()
   }
 }
