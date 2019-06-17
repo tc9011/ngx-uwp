@@ -69,6 +69,14 @@
     "components/**/*.scss": [
       "stylelint \"components/**/*.scss\" --fix",
       "git add"
+    ],
+    "src/app/**/!(demo|testing)/!(polyfills).ts": [
+      "tslint -c tslint.json --fix",
+      "git add"
+    ],
+    "src/app/**/*.scss": [
+      "stylelint \"src/app/**/*.scss\" --fix",
+      "git add"
     ]
   },
   "husky": {
