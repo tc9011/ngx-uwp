@@ -11,7 +11,8 @@
     "lint": "npm run lint:ts && npm run lint:style",
     "lint:ts": "tslint -c tslint.json 'components/**/!(demo|testing)/!(polyfills).ts' 'src/app/**/!(demo|testing)/!(polyfills).ts' --fix",
     "lint:style": "stylelint \"src/app/**/*.scss\" --fix && stylelint \"components/**/*.scss\" --fix",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "commit": "git-cz"
   },
   "private": true,
   "dependencies": {
@@ -38,10 +39,14 @@
     "@angular/cli": "~8.0.1",
     "@angular/compiler-cli": "^8.0.0",
     "@angular/language-service": "~8.0.0",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.1",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
     "husky": "^2.4.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -81,7 +86,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
   }
 }
