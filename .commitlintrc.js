@@ -1,13 +1,16 @@
-// type: commit 的类型
-// 参考：https://juejin.im/post/5afc5242f265da0b7f44bee4
-// feat: 新特性
-// fix: 修改问题
-// docs: 文档修改
-// style: 代码格式修改, 注意不是 css 修改
-// refactor: 代码重构
-// chore: 其他修改, 比如构建流程, 依赖管理.
-// subject: commit 的概述, 建议符合  50/72 formatting
-// ...
+// type: type of commit
+// feat:  A new feature
+// fix: A bug fix
+// docs: Documentation only changes
+// style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+// refactor: A code change that neither fixes a bug nor adds a feature
+// perf: A code change that improves performance
+// test: Adding missing tests or correcting existing tests
+// build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+// ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+// revert:   Reverts a previous commit
+// chore: Other changes that don't modify src or test files
+// subject: description of commit,  50/72 formatting
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],
@@ -19,4 +22,4 @@ module.exports = {
     ],
     'subject-case': [0, 'never'],
   },
-}
+};

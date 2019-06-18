@@ -1,4 +1,11 @@
-import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay'
+import {
+  FlexibleConnectedPositionStrategy,
+  OriginConnectionPosition,
+  Overlay,
+  OverlayConfig,
+  OverlayConnectionPosition,
+  OverlayRef,
+} from '@angular/cdk/overlay'
 import { ComponentPortal } from '@angular/cdk/portal'
 import {
   ChangeDetectorRef,
@@ -25,7 +32,7 @@ type HorizontalPosition = 'start' | 'center' | 'end'
 
 @Directive({
   selector: '[uwp-tooltip]',
-  exportAs: 'uwpTooltip'
+  exportAs: 'uwpTooltip',
 })
 export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
   private _overlayRef: OverlayRef | null
@@ -37,7 +44,7 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
   private _componentRef: ComponentRef<UwpTooltipComponent>
 
   protected needUpdateProperties = [
-    'uwpContent'
+    'uwpContent',
   ]
 
   @Input() uwpVerticalPosition: VerticalPosition = 'top'
@@ -53,7 +60,7 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
     private _renderer: Renderer2,
     private _viewContainerRef: ViewContainerRef,
     private _factoryResolver: ComponentFactoryResolver,
-    private _cdr: ChangeDetectorRef
+    private _cdr: ChangeDetectorRef,
   ) {
     this._element = _elementRef.nativeElement
     this._manualListeners
@@ -129,24 +136,89 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
   }
 
   private _updatePosition(): void {
+    let position
+    if (this._overlayRef) {
+      position = this._overlayRef.getConfig().positionStrategy as FlexibleConnectedPositionStrategy
+    }
+
+    const origin = this._getOrigin()
+    const overlay = this._getOverlay()
+
+    position.withPositions([
+      {...origin.main, ...overlay.main},
+      {...origin.fallback, ...overlay.fallback},
+    ])
+  }
+
+  private _getOrigin(): { main: OriginConnectionPosition, fallback: OriginConnectionPosition } {
+    let originPosition: OriginConnectionPosition
+
+    originPosition = {
+      originX: this.uwpHorizontalPosition,
+      originY: this.uwpVerticalPosition,
+    }
+
+    const {x, y} = this._invertPosition()
+
+    return {
+      main: originPosition,
+      fallback: {
+        originX: x,
+        originY: y,
+      },
+    }
+  }
+
+  private _getOverlay(): { main: OverlayConnectionPosition, fallback: OverlayConnectionPosition } {
+    let originPosition: OverlayConnectionPosition
+
+    originPosition = {
+      overlayX: this.uwpHorizontalPosition,
+      overlayY: this.uwpVerticalPosition,
+    }
+
+    const {x, y} = this._invertPosition()
+
+    return {
+      main: originPosition,
+      fallback: {
+        overlayX: x,
+        overlayY: y,
+      },
+    }
+  }
+
+  private _invertPosition() {
+    let x = this.uwpHorizontalPosition
+    let y = this.uwpVerticalPosition
+
+    if (this.uwpVerticalPosition === 'top') {
+      y = 'bottom'
+    } else if (this.uwpVerticalPosition === 'bottom') {
+      y = 'top'
+    }
+
+    if (this.uwpHorizontalPosition === 'start') {
+      x = 'end'
+    } else if (this.uwpHorizontalPosition === 'end') {
+      x = 'start'
+    }
+
+    return {x, y}
   }
 
   private _createOverlay(): void {
     const strategy = this._overlay.position()
       .flexibleConnectedTo(this._element)
       .withFlexibleDimensions(false)
-      .withPositions([{
-        originX: 'start',
-        originY: 'bottom',
-        overlayX: 'start',
-        overlayY: 'top',
-        offsetX: 0,
-        offsetY: 0
-      }])
+      .withViewportMargin(8)
     strategy.withLockedPosition(true)
     const config = new OverlayConfig({positionStrategy: strategy})
     config.scrollStrategy = this._overlay.scrollStrategies.reposition()
     this._overlayRef = this._overlay.create(config)
+
+    this._updatePosition()
+
     this._portal = this._portal || new ComponentPortal(UwpTooltipComponent, this._viewContainerRef)
     this._componentRef = this._overlayRef.attach(this._portal)
     this._tooltipInstance = this._componentRef.instance
