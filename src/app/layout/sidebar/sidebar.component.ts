@@ -10,43 +10,43 @@ import { MenuData } from './sidebar.typings'
 })
 export class SidebarComponent implements OnInit {
   /*
-  *
-  * 使用方法：
-  * <app-sidebar [data]="menuData">
-  *   <li class="zte-aside-title">啊啊啊啊啊</li>
-  * </app-sidebar>
-  *
-  * menuData = [
-  *  {
-  *   title: 'title1',
-  *   routeLink: 'faceDataBase',
-  *   icon: 'icon font-paletx px-icon-user_20',
-  *   children: [
-  *       {
-  *         title: 'title2',
-  *         routeLink: 'cameraSettings',
-  *         icon: 'icon font-paletx px-icon-webcam_20'
-  *       }
-  *     ]
-  *   },
-  *   {
-  *     title: 'title3',
-  *     routeLink: 'cameraSettings',
-  *     icon: 'icon font-paletx px-icon-webcam_20'
-  *   },
-  *   {
-  *     title: 'title4',
-  *     routeLink: 'resultInquiries',
-  *     icon: 'icon font-paletx px-icon-overview_20'
-  *   },
-  *   {
-  *     title: 'title5',
-  *     routeLink: 'groupManage',
-  *     icon: 'icon font-paletx px-icon-project_member_20'
-  *   }
-  * ];
-  *
-  * */
+   *
+   * 使用方法：
+   * <app-sidebar [data]="menuData">
+   *   <li class="zte-aside-title">啊啊啊啊啊</li>
+   * </app-sidebar>
+   *
+   * menuData = [
+   *  {
+   *   title: 'title1',
+   *   routeLink: 'faceDataBase',
+   *   icon: 'icon font-paletx px-icon-user_20',
+   *   children: [
+   *       {
+   *         title: 'title2',
+   *         routeLink: 'cameraSettings',
+   *         icon: 'icon font-paletx px-icon-webcam_20'
+   *       }
+   *     ]
+   *   },
+   *   {
+   *     title: 'title3',
+   *     routeLink: 'cameraSettings',
+   *     icon: 'icon font-paletx px-icon-webcam_20'
+   *   },
+   *   {
+   *     title: 'title4',
+   *     routeLink: 'resultInquiries',
+   *     icon: 'icon font-paletx px-icon-overview_20'
+   *   },
+   *   {
+   *     title: 'title5',
+   *     routeLink: 'groupManage',
+   *     icon: 'icon font-paletx px-icon-project_member_20'
+   *   }
+   * ];
+   *
+   * */
 
   _items: MenuData[]
 
@@ -55,13 +55,9 @@ export class SidebarComponent implements OnInit {
     this._items = items
   }
 
-  constructor(public el: ElementRef,
-              public renderer: Renderer2,
-              private router: Router) {
-  }
+  constructor(public el: ElementRef, public renderer: Renderer2, private router: Router) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   isActiveRoute(route: MenuData[]): boolean {
     let isRouteActive: boolean
@@ -77,5 +73,4 @@ export class SidebarComponent implements OnInit {
     })
     return isRouteActive
   }
-
 }

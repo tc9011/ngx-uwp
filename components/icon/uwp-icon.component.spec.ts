@@ -8,9 +8,8 @@ describe('UwpIconComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UwpIconComponent ]
-    })
-    .compileComponents()
+      declarations: [UwpIconComponent]
+    }).compileComponents()
   }))
 
   beforeEach(() => {

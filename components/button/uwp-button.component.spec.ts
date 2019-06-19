@@ -8,9 +8,8 @@ describe('UwpButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UwpButtonComponent ]
-    })
-    .compileComponents()
+      declarations: [UwpButtonComponent]
+    }).compileComponents()
   }))
 
   beforeEach(() => {

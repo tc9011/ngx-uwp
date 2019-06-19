@@ -17,12 +17,12 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule),
+        loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule)
       },
       {
         path: 'about',
-        component: AboutComponent,
-      },
+        component: AboutComponent
+      }
     ]
   }
 ]
@@ -31,5 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class ViewsRoutingModule {
-}
+export class ViewsRoutingModule {}

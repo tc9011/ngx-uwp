@@ -19,12 +19,9 @@ import {
 export class UwpTooltipComponent implements OnInit {
   @Input() uwpContent: string | TemplateRef<void> | null
 
-  constructor(
-    public cdr: ChangeDetectorRef
-  ) { }
+  constructor(public cdr: ChangeDetectorRef) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   isTemplate(): boolean {
     return this.uwpContent instanceof TemplateRef

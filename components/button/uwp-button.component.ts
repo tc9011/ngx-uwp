@@ -7,7 +7,7 @@ import {
   HostBinding,
   Input,
   ViewChild,
-  ViewEncapsulation,
+  ViewEncapsulation
 } from '@angular/core'
 
 export type uwpButtonType = 'primary' | 'accent'
@@ -18,7 +18,7 @@ export type uwpButtonType = 'primary' | 'accent'
   templateUrl: './uwp-button.component.html',
   styleUrls: ['./uwp-button.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UwpButtonComponent implements AfterContentInit {
   private _prefixCls = 'uwp-btn'
@@ -28,19 +28,12 @@ export class UwpButtonComponent implements AfterContentInit {
 
   @HostBinding('class')
   get hostClasses(): string {
-    return [
-      'uwp-btn',
-      this.class,
-      `${this._prefixCls}-${this.uwpType}`,
-    ].join(' ')
+    return ['uwp-btn', this.class, `${this._prefixCls}-${this.uwpType}`].join(' ')
   }
 
   @ViewChild('contentElement', { static: false }) contentElement: ElementRef
 
-  constructor(
-    private _cdr: ChangeDetectorRef,
-  ) {
-  }
+  constructor(private _cdr: ChangeDetectorRef) {}
 
   ngAfterContentInit(): void {
     this.checkContent()

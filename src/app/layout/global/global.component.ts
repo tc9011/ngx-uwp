@@ -5,10 +5,7 @@ import { Component, OnInit } from '@angular/core'
   templateUrl: './global.component.html'
 })
 export class GlobalComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

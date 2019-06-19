@@ -7,11 +7,8 @@ import { UwpTooltipDirective } from './uwp-tooltip.directive'
 
 @NgModule({
   declarations: [UwpTooltipComponent, UwpTooltipDirective],
-  imports: [
-    CommonModule,
-    OverlayModule
-  ],
+  imports: [CommonModule, OverlayModule],
   exports: [UwpTooltipComponent, UwpTooltipDirective],
   entryComponents: [UwpTooltipComponent]
 })
-export class UwpTooltipModule { }
+export class UwpTooltipModule {}

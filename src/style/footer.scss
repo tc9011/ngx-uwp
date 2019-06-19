@@ -1,4 +1,4 @@
-#uwp-footer{
+#uwp-footer {
   display: flex;
   justify-content: center;
   background: $theme-color;
@@ -18,7 +18,8 @@
     dl {
       margin: 20px;
     }
-    dt, dd {
+    dt,
+    dd {
       margin: 12px 0;
     }
     dt {
@@ -35,6 +36,3 @@
     }
   }
 }
-
-
-

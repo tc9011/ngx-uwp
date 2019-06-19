@@ -7,7 +7,7 @@ export function toBoolean(value: boolean | string): boolean {
 // tslint:disable-next-line: no-any
 function propDecoratorFactory<T, D>(name: string, fallback: (v: T) => D): (target: any, propName: string) => void {
   // tslint:disable-next-line: no-any
-  return function (target: any, propName: string): void {
+  return function(target: any, propName: string): void {
     const privatePropName = `$$__${propName}`
 
     if (Object.prototype.hasOwnProperty.call(target, privatePropName)) {
@@ -16,7 +16,7 @@ function propDecoratorFactory<T, D>(name: string, fallback: (v: T) => D): (targe
 
     Object.defineProperty(target, privatePropName, {
       configurable: true,
-      writable: true,
+      writable: true
     })
 
     Object.defineProperty(target, propName, {
@@ -25,7 +25,7 @@ function propDecoratorFactory<T, D>(name: string, fallback: (v: T) => D): (targe
       },
       set(value: T): void {
         this[privatePropName] = fallback(value) // tslint:disable-line:no-invalid-this
-      },
+      }
     })
   }
 }

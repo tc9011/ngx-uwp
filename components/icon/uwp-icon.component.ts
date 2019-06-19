@@ -1,16 +1,7 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  Renderer2,
-  ViewEncapsulation,
-} from '@angular/core'
+import { AfterViewInit, Component, ElementRef, HostListener, Input, Renderer2, ViewEncapsulation } from '@angular/core'
 import { isNil, isNilObject } from 'ngx-uwp/core'
 
 import { Icons } from './icons'
-
 
 @Component({
   selector: '[uwp-icon]',
@@ -19,7 +10,7 @@ import { Icons } from './icons'
   styleUrls: ['./uwp-icon.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    'class': 'uwp-icon'
+    class: 'uwp-icon'
   }
 })
 export class UwpIconComponent implements AfterViewInit {
@@ -55,10 +46,7 @@ export class UwpIconComponent implements AfterViewInit {
     }
   }
 
-  constructor(
-    private _el: ElementRef,
-    private _renderer: Renderer2
-  ) { }
+  constructor(private _el: ElementRef, private _renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
     this._createIconElement()

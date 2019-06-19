@@ -70,7 +70,7 @@ export class UwpThemeService {
     return of({
       themeName: this._themeName,
       accent: this._accent,
-      useFluentDesign: this._useFluentDesign,
+      useFluentDesign: this._useFluentDesign
     })
   }
 }

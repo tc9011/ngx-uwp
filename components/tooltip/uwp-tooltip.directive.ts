@@ -4,7 +4,7 @@ import {
   Overlay,
   OverlayConfig,
   OverlayConnectionPosition,
-  OverlayRef,
+  OverlayRef
 } from '@angular/cdk/overlay'
 import { ComponentPortal } from '@angular/cdk/portal'
 import {
@@ -20,7 +20,7 @@ import {
   Renderer2,
   SimpleChanges,
   TemplateRef,
-  ViewContainerRef,
+  ViewContainerRef
 } from '@angular/core'
 
 import { isNil, InputBoolean } from 'ngx-uwp/core'
@@ -32,7 +32,7 @@ type HorizontalPosition = 'start' | 'center' | 'end'
 
 @Directive({
   selector: '[uwp-tooltip]',
-  exportAs: 'uwpTooltip',
+  exportAs: 'uwpTooltip'
 })
 export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
   private _overlayRef: OverlayRef | null
@@ -43,9 +43,7 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
   private _manualListeners = new Map<string, EventListenerOrEventListenerObject>()
   private _componentRef: ComponentRef<UwpTooltipComponent>
 
-  protected needUpdateProperties = [
-    'uwpContent',
-  ]
+  protected needUpdateProperties = ['uwpContent']
 
   @Input() uwpVerticalPosition: VerticalPosition = 'top'
   @Input() uwpHorizontalPosition: HorizontalPosition = 'center'
@@ -60,12 +58,10 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
     private _renderer: Renderer2,
     private _viewContainerRef: ViewContainerRef,
     private _factoryResolver: ComponentFactoryResolver,
-    private _cdr: ChangeDetectorRef,
+    private _cdr: ChangeDetectorRef
   ) {
     this._element = _elementRef.nativeElement
-    this._manualListeners
-      .set('mouseenter', () => this.show())
-      .set('mouseleave', () => this.hide())
+    this._manualListeners.set('mouseenter', () => this.show()).set('mouseleave', () => this.hide())
 
     this._manualListeners.forEach((listener, event) => this._element.addEventListener(event, listener))
   }
@@ -144,47 +140,50 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
     const origin = this._getOrigin()
     const overlay = this._getOverlay()
 
-    position.withPositions([
-      {...origin.main, ...overlay.main},
-      {...origin.fallback, ...overlay.fallback},
-    ])
+    position.withPositions([{ ...origin.main, ...overlay.main }, { ...origin.fallback, ...overlay.fallback }])
   }
 
-  private _getOrigin(): { main: OriginConnectionPosition, fallback: OriginConnectionPosition } {
+  private _getOrigin(): {
+    main: OriginConnectionPosition
+    fallback: OriginConnectionPosition
+  } {
     let originPosition: OriginConnectionPosition
 
     originPosition = {
       originX: this.uwpHorizontalPosition,
-      originY: this.uwpVerticalPosition,
+      originY: this.uwpVerticalPosition
     }
 
-    const {x, y} = this._invertPosition()
+    const { x, y } = this._invertPosition()
 
     return {
       main: originPosition,
       fallback: {
         originX: x,
-        originY: y,
-      },
+        originY: y
+      }
     }
   }
 
-  private _getOverlay(): { main: OverlayConnectionPosition, fallback: OverlayConnectionPosition } {
+  private _getOverlay(): {
+    main: OverlayConnectionPosition
+    fallback: OverlayConnectionPosition
+  } {
     let originPosition: OverlayConnectionPosition
 
     originPosition = {
       overlayX: this.uwpHorizontalPosition,
-      overlayY: this.uwpVerticalPosition,
+      overlayY: this.uwpVerticalPosition
     }
 
-    const {x, y} = this._invertPosition()
+    const { x, y } = this._invertPosition()
 
     return {
       main: originPosition,
       fallback: {
         overlayX: x,
-        overlayY: y,
-      },
+        overlayY: y
+      }
     }
   }
 
@@ -204,16 +203,17 @@ export class UwpTooltipDirective implements OnInit, OnDestroy, OnChanges {
       x = 'start'
     }
 
-    return {x, y}
+    return { x, y }
   }
 
   private _createOverlay(): void {
-    const strategy = this._overlay.position()
+    const strategy = this._overlay
+      .position()
       .flexibleConnectedTo(this._element)
       .withFlexibleDimensions(false)
       .withViewportMargin(8)
     strategy.withLockedPosition(true)
-    const config = new OverlayConfig({positionStrategy: strategy})
+    const config = new OverlayConfig({ positionStrategy: strategy })
     config.scrollStrategy = this._overlay.scrollStrategies.reposition()
     this._overlayRef = this._overlay.create(config)
 

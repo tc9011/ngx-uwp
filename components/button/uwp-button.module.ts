@@ -11,4 +11,4 @@ import { UwpButtonComponent } from './uwp-button.component'
   imports: [CommonModule, ObserversModule, UwpIconModule],
   exports: [UwpButtonComponent]
 })
-export class UwpButtonModule { }
+export class UwpButtonModule {}
