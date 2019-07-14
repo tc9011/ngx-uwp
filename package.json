@@ -9,7 +9,7 @@
     "build:lib": "npm run lint && ng build ngx-uwp",
     "test": "ng test",
     "prettier": "prettier --config ./.prettierrc --write 'src/**/!(polyfills).{ts,scss}' 'components/**/!(polyfills).{ts,scss}'",
-    "lint": "npm run lint:ts && npm run lint:style",
+    "lint": "npm run prettier && npm run lint:ts && npm run lint:style",
     "lint:ts": "tslint -c tslint.json 'components/**/!(demo|testing)/!(polyfills).ts' 'src/app/**/!(demo|testing)/!(polyfills).ts' --fix",
     "lint:style": "stylelint \"src/app/**/*.scss\" --fix && stylelint \"components/**/*.scss\" --fix",
     "e2e": "ng e2e",
@@ -72,27 +72,11 @@
   },
   "lint-staged": {
     "components/**/!(demo|testing)/!(polyfills).{ts,scss}": [
-      "prettier --config ./.prettierrc --write",
+      "npm run lint",
       "git add"
     ],
     "src/app/**/!(demo|testing)/!(polyfills).{ts,scss}": [
-      "prettier --config ./.prettierrc --write",
-      "git add"
-    ],
-    "components/**/!(demo|testing)/!(polyfills).ts": [
-      "tslint -c tslint.json --fix",
-      "git add"
-    ],
-    "components/**/*.scss": [
-      "stylelint \"components/**/*.scss\" --fix",
-      "git add"
-    ],
-    "src/app/**/!(demo|testing)/!(polyfills).ts": [
-      "tslint -c tslint.json --fix",
-      "git add"
-    ],
-    "src/app/**/*.scss": [
-      "stylelint \"src/app/**/*.scss\" --fix",
+      "npm run lint",
       "git add"
     ]
   },
