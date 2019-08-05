@@ -1,6 +1,17 @@
 {
   "extends": ["stylelint-config-standard", "prettier-stylelint"],
+  "plugins": [
+    "stylelint-scss"
+  ],
   "rules": {
+    "at-rule-no-unknown": null,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": ["custom-elements", "default-namespace"]
+      }
+    ],
+    "scss/at-rule-no-unknown": true,
     "no-empty-source": null,
     "selector-pseudo-element-no-unknown": [
       true,
